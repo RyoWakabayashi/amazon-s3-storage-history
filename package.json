@@ -1,0 +1,23 @@
+{
+  "name": "amazon-s3-storage-history",
+  "version": "1.0.0",
+  "description": "Amazon S3 storage capacity history acquisition tool",
+  "main": "",
+  "scripts": {
+    "prepare": "bash -c \"cp ./git_hooks/commit-msg ./.git/hooks/\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:RyoWakabayashi/amazon-s3-storage-history.git"
+  },
+  "author": "Ryo Wakabayashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RyoWakabayashi/amazon-s3-storage-history/issues"
+  },
+  "homepage": "https://github.com/RyoWakabayashi/amazon-s3-storage-history#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0"
+  }
+}

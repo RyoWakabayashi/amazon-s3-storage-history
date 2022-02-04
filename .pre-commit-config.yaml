@@ -1,0 +1,60 @@
+---
+
+repos:
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.3
+    hooks:
+      - id: yamllint
+        files: \.(yaml|yml)$
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.30.0
+    hooks:
+      - id: markdownlint
+        files: \.(markdown|md)$
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-json
+      - id: detect-aws-credentials
+        args: ["--allow-missing-credentials"]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+        args: [--branch, main]
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/RyoWakabayashi/pre-commit-mirrors-textlint
+    rev: v12.0.2
+    hooks:
+      - id: textlint
+        files: \.(markdown|md)$
+        additional_dependencies:
+          - "textlint"
+          - "textlint-filter-rule-comments"
+          - "textlint-rule-terminology"
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v2.7.4
+    hooks:
+      - id: pylint
+        files: \.(py)$
+        args: [--errors-only, --disable=import-error]
+  - repo: https://github.com/psf/black
+    rev: 22.1.0
+    hooks:
+      - id: black
+        language_version: python3
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 4.0.1
+    hooks:
+      - id: flake8
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.8.0.3
+    hooks:
+      - id: shellcheck
+        files: \.sh$

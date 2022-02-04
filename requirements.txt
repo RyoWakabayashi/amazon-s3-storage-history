@@ -1,0 +1,4 @@
+awscli==1.22.48
+boto3==1.20.48
+pandas==1.4.0
+pre-commit==2.17.0
